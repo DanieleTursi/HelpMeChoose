@@ -1,0 +1,269 @@
+/* font-family: 'Indie Flower', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Quicksand', sans-serif; */
+
+
+:root{
+    --mred:#EC5A39;
+    --fpara:'Indie Flower', cursive;
+    --flinks:'Permanent Marker', cursive;
+}
+
+body{
+    width:100%;
+    margin:0;
+    background-color: rgb(218, 223, 228);
+    overflow-x: hidden;
+}
+
+#maincontainer {
+    display:flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+
+#navcontainer{
+    display:flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    background:var(--mred) ;
+}
+
+#links {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#logo a{
+    padding:30px auto;
+    text-decoration: none;
+    font-family: 'Indie Flower', cursive;
+    font-size: 36px;
+    font-weight:bolder;
+    color: white;
+    text-align: center;
+}
+
+#links a{
+    padding:30px 35px;
+    text-decoration: none;
+    font-family: var(--flinks);
+    color:white;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+#links a:hover{
+    cursor:pointer;
+    letter-spacing: 2px;
+    transform: scale(1.2);
+}
+
+#logsignup{
+    display:flex;
+    justify-content: center;
+}
+
+#logsignup button{
+    width:100px;
+    padding:10px;
+    margin:20px 15px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    border:none;
+    font-family: var(--flinks);
+    color:var(--mred);
+}
+
+#logsignup button:hover{
+    cursor:pointer;
+    background-color: rgba(255, 255, 255, 0.90);
+    
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+}
+
+#pickcolor{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pickcolor h3{
+    font-family: var(--fpara);
+    color:white;
+    font-size: 18px;
+}
+
+#pickcolor button{
+    width:200px;
+    padding:10px;
+    margin:20px 15px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    border:none;
+    font-family: var(--flinks);
+    color:var(--mred);
+}
+
+#pickcolor img{
+    width:22px;
+    height: 16px;
+    padding-right: 5px;
+}
+
+
+#pickcolor input:hover{
+    cursor:pointer;
+}
+
+#question{
+    grid-area: quest;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+
+
+#box1 {
+    grid-area: opt1;
+    width: 220px;
+    height: 220px;
+    background-color: var(--mred);
+    border-radius: 20px;
+}
+
+#box2 {
+    grid-area: opt2;
+    width: 220px;
+    height: 220px;
+    background-color: var(--mred);
+    border-radius: 20px;
+}
+
+#box3 {
+    grid-area: opt3;
+    width: 220px;
+    height: 220px;
+    background-color: var(--mred);
+    border-radius: 20px;
+}
+
+#box4 {
+    grid-area: opt4;
+    width: 220px;
+    height: 220px;
+    background-color: var(--mred);
+    border-radius: 20px;
+}
+
+#gridcontainer {
+    display: grid;
+    width:100%;
+    float:right;
+    grid-template-columns: 260px 260px;
+    grid-template-rows: 60px 260px 260px;
+    gap:20px;
+    grid-template-areas: 
+    "quest quest"
+    "opt1 opt2"
+    "opt3 opt4";
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 992px){
+
+    #maincontainer {
+        display:flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    #navcontainer{
+        display:grid;
+        width: 100%;
+    
+    }
+
+    #logo {
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+    }
+    
+
+    #links {
+        display:flex;
+        flex-direction: row;
+       justify-content: center;
+    }
+
+    #logsignup{
+        display:flex;
+
+    }
+    #links a{
+        padding:10px 25px;
+        font-size: 14px;
+    }
+
+    #question{
+        grid-area: quest;
+        text-align: center;
+        font-family: 'Indie Flower', cursive;
+        font-size: 20px;
+    }
+
+    #box1{
+         width: 18vh;
+         height: 18vh;
+    }
+
+    #box2{
+         width: 18vh;
+         height: 18vh;
+    }
+
+    #box3{
+         width: 18vh;
+         height: 18vh;
+    }
+
+    #box4{
+         grid-area: opt4;
+         width: 18vh;
+         height: 18vh;
+         background-color: var(--mred);
+         border-radius: 20px;
+    }
+
+    #gridcontainer {
+        display: grid;
+        max-width:100%;
+        grid-template-columns: 19vh 19vh;
+        grid-template-rows: 50px 19vh 19vh;
+        gap:5px;
+        grid-template-areas: 
+        "quest quest"
+        "opt1 opt2"
+        "opt3 opt4";
+        align-content: center;
+        justify-content: center;
+        margin:auto;
+    }
+}
