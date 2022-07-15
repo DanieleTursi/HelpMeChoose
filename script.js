@@ -1,3 +1,50 @@
+var pickcolor = document.querySelector(".color1");
+var nav=document.getElementById("navcontainer");
+var signup=document.getElementById("signup");
+var login=document.getElementById("login");
+var random=document.getElementById("random");
+
+
+pickcolor.addEventListener("input", ()=>{
+    nav.style.background= pickcolor.value;
+    signup.style.color= pickcolor.value;
+    login.style.color= pickcolor.value;
+    random.style.color= pickcolor.value;
+})
+
+random.addEventListener ("click", ()=> {
+      var n = Math.random();
+      n = n * 256;
+      n = Math.floor(n);
+      var a = Math.random();
+      a = a * 256;
+      a = Math.floor(a);
+      var b = Math.random();
+      b = b * 256;
+      b = Math.floor(b);
+      var color = "rgb(" + n + "," + a + "," + b + ")";
+      function RGBToHex(rgb) {
+        let sep = rgb.indexOf(",") > -1 ? "," : " ";
+        rgb = rgb.substr(4).split(")")[0].split(sep);
+        let r = (+rgb[0]).toString(16),
+            g = (+rgb[1]).toString(16),
+            b = (+rgb[2]).toString(16);
+        if (r.length == 1)
+          r = "0" + r;
+        if (g.length == 1)
+          g = "0" + g;
+        if (b.length == 1)
+          b = "0" + b;
+        return "#" + r + g + b;
+      }
+      var valueinput= RGBToHex(color)
+      nav.style.background= color;
+      signup.style.color= color;
+      login.style.color= color;
+      random.style.color= color;
+      pickcolor.value=valueinput;
+    });
+
 let box1 = document.querySelector('#box1')
 let box2 = document.querySelector('#box2')
 let box3 = document.querySelector('#box3')
