@@ -75,7 +75,7 @@ window.addEventListener('load', (e) => {
             e.preventDefault();
             let clicked = x.id;
             answer = x.src;
-            answer = answer.slice(29,-5);
+            answer = answer.slice(41,-5);
             if (arraycities.length>=3){
             boxes.forEach(b => {
                 if (b != clicked) {
