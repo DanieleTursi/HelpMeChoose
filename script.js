@@ -57,6 +57,7 @@ let arraycities = ["/images/berlin.jpeg", "/images/bruges.jpeg", "/images/copena
 let boxWrapper = [box1, box2, box3, box4]
 let boxes = ['box1', 'box2', 'box3', 'box4'];
 let answer='';
+let clicked='';
 
 function getRandomItem(arr) {
     const randomIndex = Math.floor(Math.random() * arr.length);
@@ -74,7 +75,7 @@ window.addEventListener('load', (e) => {
     boxWrapper.forEach(x => {
             x.addEventListener('click', (e) => {
             e.preventDefault();
-            let clicked = x.id;
+            clicked = x.id;
             answer = x.src;
             answer = answer.slice(41,-5);
             if (arraycities.length>=3){
@@ -83,25 +84,26 @@ window.addEventListener('load', (e) => {
                     eval(b).src = getRandomItem(arraycities);
                 }
             })
-            console.log(arraycities);
         } else {
          question.innerHTML= 'YOU WANT TO GO TO '+ answer;
          showAnswer.innerHTML= 'Hope you will love it ! ';
           boxes.forEach(c => {
             if (c != clicked) {
                 eval(c).remove();
-                console.log(clicked)
             }
         })
         container[0].classList.toggle("gridContainerAnswer")
         boxes.forEach(d => {
           if (d === clicked) {
               eval(d).style.width="440px";
-              eval(d).style.height="440px";
-          }
+              eval(d).style.height="440px";  
+              eval(d).style.pointerEvents="none";
+          }   
       })
         }
            })} 
+      
+           
     )})
 
 
