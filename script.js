@@ -86,13 +86,20 @@ window.addEventListener('load', (e) => {
             console.log(arraycities);
         } else {
          question.innerHTML= 'YOU WANT TO GO TO '+ answer;
-         showAnswer.innerHTML= 'Hope you will love it! ' + answer;
+         showAnswer.innerHTML= 'Hope you will love it ! ';
           boxes.forEach(c => {
             if (c != clicked) {
                 eval(c).remove();
+                console.log(clicked)
             }
         })
         container[0].classList.toggle("gridContainerAnswer")
+        boxes.forEach(d => {
+          if (d === clicked) {
+              eval(d).style.width="440px";
+              eval(d).style.height="440px";
+          }
+      })
         }
            })} 
     )})
