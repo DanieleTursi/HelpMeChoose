@@ -49,8 +49,9 @@ let box1 = document.querySelector('#box1')
 let box2 = document.querySelector('#box2')
 let box3 = document.querySelector('#box3')
 let box4 = document.querySelector('#box4')
-let cointainer = document.querySelector('#gridcontainer')
+let container = document.querySelectorAll('.gridcontainer')
 let showAnswer= document.querySelector('#answer')
+let question=document.querySelector('#question')
 let arraycities = ["/images/berlin.jpeg", "/images/bruges.jpeg", "/images/copenaghen.jpeg", "/images/london.jpeg", "/images/paris.jpeg", "/images/warsaw.jpeg", "/images/lisbon.jpeg",
     "/images/prague.jpeg", "/images/madrid.jpeg", "/images/rome.jpeg"]
 let boxWrapper = [box1, box2, box3, box4]
@@ -83,7 +84,16 @@ window.addEventListener('load', (e) => {
                 }
             })
             console.log(arraycities);
-        } else {showAnswer.innerHTML= 'YOU WANT TO GO TO '+ answer;}
+        } else {
+         question.innerHTML= 'YOU WANT TO GO TO '+ answer;
+         showAnswer.innerHTML= 'Hope you will love ' + answer;
+          boxes.forEach(c => {
+            if (c != clicked) {
+                eval(c).remove();
+            }
+        })
+        container[0].classList.toggle("gridContainerAnswer")
+        }
            })} 
     )})
 

@@ -182,7 +182,7 @@ body{
     text-transform: uppercase;
 }
 
-#gridcontainer {
+.gridcontainer {
     display: grid;
     width:100%;
     float:right;
@@ -197,6 +197,13 @@ body{
     align-content: center;
     justify-content: center;
     margin: auto;
+}
+
+.gridContainerAnswer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -268,7 +275,7 @@ body{
          border-radius: 20px;
     }
 
-    #gridcontainer {
+    .gridcontainer {
         display: grid;
         max-width:100%;
         grid-template-columns: 20vh 20vh;
