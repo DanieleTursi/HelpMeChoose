@@ -95,8 +95,8 @@ window.addEventListener('load', (e) => {
         container[0].classList.toggle("gridContainerAnswer")
         boxes.forEach(d => {
           if (d === clicked) {
-              eval(d).style.width="440px";
-              eval(d).style.height="440px";  
+              eval(d).style.width="300px";
+              eval(d).style.height="300px";  
               eval(d).style.pointerEvents="none";
           }   
       })
