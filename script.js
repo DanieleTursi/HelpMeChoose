@@ -86,7 +86,7 @@ window.addEventListener('load', (e) => {
             console.log(arraycities);
         } else {
          question.innerHTML= 'YOU WANT TO GO TO '+ answer;
-         showAnswer.innerHTML= 'Hope you will love ' + answer;
+         showAnswer.innerHTML= 'Hope you will love it! ' + answer;
           boxes.forEach(c => {
             if (c != clicked) {
                 eval(c).remove();
