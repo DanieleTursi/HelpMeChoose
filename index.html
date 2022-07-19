@@ -23,8 +23,12 @@
                <a href=""> HelpMeChoose!</a>
             </div>
             <div id="links">
-                <a href="">PICK A QUESTION</a>
-                <a href="">MY PREVIOUS PICKS</a>
+              <div id="questcontainer">
+                <p>PICK A QUESTION BELOW:</p>
+                <a href="/visit.html">Where do I want to go?</a>
+                <a href="/eat.html">What I want to eat?</a>
+              </div>
+                <!-- <a href="">MY PREVIOUS PICKS</a> -->
             </div>
             <div id="pickcolor">
                 <h3>Pick Bar Color:</h3>
@@ -33,15 +37,29 @@
             </div>
         </nav>
     </header>
-    <div class="gridcontainer">
+    <div id="rightside">
+    <div class="questionslist">
+        <a href="/visit.html">Where do I want to go?</a>
+        <a href="">What do I want to eat?</a>
+     </div>
+     <p id="index">We are here to clear your doubt!!</p>
+     <p id="desc">Pick a question from the options on the left side. <br> Pictures will be displayed,
+    choose one of them, new option will be generates, <br> keep choosing your favourite one and we will give you an answer. <br>
+    <br> See video example below:</p>
+     <video  controls>
+        <source src="/images/howitworks.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!-- <div class="gridcontainer">
         <h2 id="question">WHERE DO I WANT TO GO? (Pick One)</h2>
         <div><a href=""><img id="box1" src="/images/berlin.jpeg" alt="berlin"></a></div>
         <div><a href=""><img id="box2" src="/images/bruges.jpeg" alt="bruges"></a></div>
         <div><a href=""><img id="box3" src="/images/copenaghen.jpeg" alt="copenhagen"></a></div>
         <div><a href=""><img id="box4" src="/images/london.jpeg" alt="london"></a></div>
         <p id="answer"></p>
-    </div>
-</div>
-<script src="/script.js"></script>
+    </div> -->
+
+ 
+<script type="module" src="/script.js"></script>
 </body>
 </html>

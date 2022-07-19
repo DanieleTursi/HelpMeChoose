@@ -1,3 +1,75 @@
+// import { GoogleAuthProvider } from "firebase/auth";
+
+// const provider = new GoogleAuthProvider();
+
+// import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+// const auth = getAuth();
+// signInWithPopup(auth, provider)
+//   .then((result) => {
+//     // This gives you a Google Access Token. You can use it to access the Google API.
+//     const credential = GoogleAuthProvider.credentialFromResult(result);
+//     const token = credential.accessToken;
+//     // The signed-in user info.
+//     const user = result.user;
+//     // ...
+//   }).catch((error) => {
+//     // Handle Errors here.
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     // The email of the user's account used.
+//     const email = error.customData.email;
+//     // The AuthCredential type that was used.
+//     const credential = GoogleAuthProvider.credentialFromError(error);
+//     // ...
+//   });
+
+//   import { getAuth, signOut } from "firebase/auth";
+
+//   const auth = getAuth();
+//     signOut(auth).then(() => {
+//   // Sign-out successful.
+// }).catch((error) => {
+//   // An error happened.
+// });
+
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAuth, onAuthStateChanged } from "firebase/auth";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseApp = initializeApp({
+//   apiKey: "AIzaSyBwOGJ3pp3KzmOruvrYdthdVEn_v2FfUmU",
+//   authDomain: "helpmechoose-356410.firebaseapp.com",
+//   projectId: "helpmechoose-356410",
+//   storageBucket: "helpmechoose-356410.appspot.com",
+//   messagingSenderId: "433098135490",
+//   appId: "1:433098135490:web:e3a97fde018f4fd930685b",
+//   measurementId: "G-DW025QM0ZL"
+// });
+
+// const auth= getAuth(firebaseApp)
+
+// // Initialize Firebase
+// onAuthStateChanged(auth, user => {
+//   if(user= null){
+//     console.log('logged in');
+//   } else {
+//     console.log('no user');
+//   }
+// });
+
+// var openQuestList=document.querySelector('#openquestlist');
+// var questList=document.querySelectorAll('.questionslist');
+
+// openQuestList.addEventListener("click", (e)=>{
+//   e.preventDefault();
+//   questList[0].classList.toggle('questionslistdisplay');
+// })
+
 var pickcolor = document.querySelector(".color1");
 var nav=document.getElementById("navcontainer");
 var signup=document.getElementById("signup");
@@ -95,15 +167,64 @@ window.addEventListener('load', (e) => {
         container[0].classList.toggle("gridContainerAnswer")
         boxes.forEach(d => {
           if (d === clicked) {
-              eval(d).style.width="300px";
-              eval(d).style.height="300px";  
+              eval(d).style.width="340px";
+              eval(d).style.height="340px";  
               eval(d).style.pointerEvents="none";
           }   
       })
         }
-           })} 
-      
-           
+           })}      
     )})
 
+let box5 = document.querySelector('#box5')
+let box6 = document.querySelector('#box6')
+let box7 = document.querySelector('#box7')
+let box8 = document.querySelector('#box8')
+let container2 = document.querySelectorAll('.gridcontainer')
+let showAnswer2= document.querySelector('#answer')
+let question2=document.querySelector('#question')
+let arraydishes = ["/images/italian.jpeg", "/images/spanish.jpeg", "/images/hungarian.jpeg", "/images/english.jpeg", "/images/jamaican.jpeg", "/images/greek.jpeg", "/images/moroccan.jpeg",
+    "/images/malaysian.jpeg", "/images/russian.jpeg", "/images/thai.jpeg"]
+let boxWrapper2 = [box5, box6, box7, box8]
+let boxes2 = ['box5', 'box6', 'box7', 'box8'];
+let answer2='';
+let clicked2='';
+
+window.addEventListener('load', (e) => {
+    e.preventDefault();
+    box5.src = getRandomItem(arraydishes);
+    box6.src = getRandomItem(arraydishes);
+    box7.src = getRandomItem(arraydishes);
+    box8.src = getRandomItem(arraydishes);
+    boxWrapper2.forEach(x => {
+            x.addEventListener('click', (e) => {
+            e.preventDefault();
+            clicked2 = x.id;
+            answer2 = x.src;
+            answer2 = answer2.slice(41,-5);
+            if (arraydishes.length>=3){
+            boxes2.forEach(b => {
+                if (b != clicked2) {
+                    eval(b).src = getRandomItem(arraydishes);
+                }
+            })
+        } else {
+         question2.innerHTML= 'YOU ARE CRAVING '+ answer2 +' CUISINE.';
+         showAnswer2.innerHTML= 'Hope you will love it ! ';
+          boxes2.forEach(c => {
+            if (c != clicked2) {
+                eval(c).remove();
+            }
+        })
+        container2[0].classList.toggle("gridContainerAnswer")
+        boxes2.forEach(d => {
+          if (d === clicked2) {
+              eval(d).style.width="340px";
+              eval(d).style.height="340px";  
+              eval(d).style.pointerEvents="none";
+          }   
+      })
+        }
+           })}      
+    )})
 
