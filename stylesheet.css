@@ -339,10 +339,12 @@ video {
         display:flex;
 
     }
+
     #links a{
         padding:10px 25px;
         font-size: 14px;
     }
+    
     .questionslistdisplay{
         display:flex;
         flex-direction: row;
@@ -374,28 +376,12 @@ video {
     }
     
 
-    #box1{
+    #box1, #box2, #box3, #box4, #box5, #box6, #box7, #box8{
          width: 18.5vh;
          height: 18.5vh;
     }
 
-    #box2{
-         width: 18.5vh;
-         height: 18.5vh;
-    }
-
-    #box3{
-         width: 18.5vh;
-         height: 18.5vh;
-    }
-
-    #box4{
-         grid-area: opt4;
-         width: 18.5vh;
-         height: 18.5vh;
-         background-color: var(--mred);
-         border-radius: 20px;
-    }
+    
 
     .gridcontainer {
         display: grid;
