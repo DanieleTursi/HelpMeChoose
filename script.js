@@ -95,6 +95,7 @@ random.addEventListener ("click", ()=> {
       b = b * 256;
       b = Math.floor(b);
       var color = "rgb(" + n + "," + a + "," + b + ")";
+
       function RGBToHex(rgb) {
         let sep = rgb.indexOf(",") > -1 ? "," : " ";
         rgb = rgb.substr(4).split(")")[0].split(sep);
@@ -109,6 +110,7 @@ random.addEventListener ("click", ()=> {
           b = "0" + b;
         return "#" + r + g + b;
       }
+      
       var valueinput= RGBToHex(color)
       nav.style.background= color;
       signup.style.color= color;

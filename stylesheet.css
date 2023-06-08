@@ -5,8 +5,8 @@ font-family: 'Quicksand', sans-serif; */
 
 :root{
     --mred:#EC5A39;
-    --fpara:'Indie Flower', cursive;
-    --flinks:'Permanent Marker', cursive;
+    --fpara:'Roboto Slab', serif;
+    --flinks:'Roboto Slab', serif;
 }
 
 body{
